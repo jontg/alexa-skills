@@ -1,0 +1,28 @@
+{
+  "name": "alexa-skills",
+  "version": "1.0.0",
+  "description": "Expose Wolfram Alpha as a skill to the amazon echo",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/tape ${1:-src/**/*.spec.js}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jontg/alexa-skills.git"
+  },
+  "keywords": [
+    "alexa",
+    "echo",
+    "wolfram"
+  ],
+  "author": "Jon Tomas Gretarsson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jontg/alexa-skills/issues"
+  },
+  "homepage": "https://github.com/jontg/alexa-skills#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^4.2.2"
+  }
+}
