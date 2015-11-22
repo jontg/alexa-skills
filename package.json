@@ -4,7 +4,8 @@
   "description": "Expose Wolfram Alpha as a skill to the amazon echo",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/tape ${1:-src/**/*.spec.js}"
+    "test": "node_modules/.bin/tape src/**/*.spec.js",
+    "setup": "cp -n .env.example .env; true"
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,11 @@
     "url": "https://github.com/jontg/alexa-skills/issues"
   },
   "homepage": "https://github.com/jontg/alexa-skills#readme",
-  "dependencies": {},
+  "dependencies": {
+    "alexa-app": "^2.2.0",
+    "alexa-utterances": "^0.1.0",
+    "wolfram": "^0.3.2"
+  },
   "devDependencies": {
     "tape": "^4.2.2"
   }
