@@ -23,13 +23,16 @@ app.intent('wolfram',
   },
   function(request, response) {
     var query = request.slot('query');
-    wolfram.query(query, function(err, result) {
+    wolfram.query(query, function(err, wolfram_response) {
       if(err) throw err;
-      console.log("Saw '%j' for query '%s'", result, query);
-      response.say(result);
+      console.log("Saw '%j' for query '%s'", wolfram_response, query);
+      var result = wolfram_response.
+        filter(r -> r.primary).
+        map(r -> r.value).
+        reduce((output, r) -> output != null ? output : r, null);
 
-      // This is asynchronous, so explicitly send the response.
-      response.send();
+
+      response.say(result).send();
     });
 
     return false; // This method is handled asynchronously
