@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -rf deploy.zip
+zip -qr deploy.zip index.js .env node_modules/*
+
+aws lambda update-function-code --region us-east-1 --function-name arn:aws:lambda:us-east-1:162352110105:function:WolframAlpha --zip-file fileb://deploy.zip
