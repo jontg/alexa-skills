@@ -15,7 +15,6 @@ app.intent('wolfram',
   function(request, response) {
     console.log("Request: %j", request);
     var query = request.slot('question');
-    response.say("I heard " + query + ".  ");
     wolfram.query(query, function(err, wolfram_response) {
       console.log("Saw request response '%s' %j", err, wolfram_response);
       if(err) throw err;
